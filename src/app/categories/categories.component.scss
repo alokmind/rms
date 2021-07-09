@@ -1,0 +1,66 @@
+@import '../../themeColor.scss';
+.main{
+    padding: 20px 30px 0;
+
+    .card-box{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h3{
+        text-align: center;
+    }
+  }
+
+.card {
+    width: 227px;
+    margin: 0 10px;
+    margin-bottom: 20px;
+    padding: 0;
+    background: $accent;
+    color: $primary;
+    font-weight: 500;
+
+    .card-txt{
+        padding: 10px 10px 16px 0;
+        text-align: center;
+
+        mat-icon{
+            float: right;
+            position: relative;
+            top: -2px;
+        }
+    }
+  }
+
+.card:hover {
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.mat-card-image {
+    width: 100%;
+    margin: 0 !important;
+}
+
+.mat-card-actions{
+    margin: 0 !important;
+    padding: 0;
+}
+
+.breadcrumb{
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+.cat-link {
+  color: $primary;  
+  cursor: pointer;
+}
+
+.cat-link:hover {
+  color: #125699;
+  text-decoration: underline;
+}

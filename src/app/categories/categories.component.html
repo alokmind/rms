@@ -1,0 +1,17 @@
+<div class="main">
+    <div *ngIf="urlData.cat" class="breadcrumb"><span (click)="backToCat()" class="cat-link">Equipment Catalog </span> / <span>{{catName}}</span></div>
+    <div *ngIf="!urlData.cat && categories !== 'error'" class="breadcrumb"><span>Equipment Catalog</span></div>
+    <div class="card-box" *ngIf="categories !== 'error'">
+        <mat-card class="card" *ngFor="let item of categories; let i = index" (click)="selectSubCategory(i)">
+            <img mat-card-image [src]="urlData.cat ? '../../assets/image_catalog/subcategory/'+item.image : '../../assets/image_catalog/'+item.image" [alt]="item.name">
+            <mat-card-actions>
+                <div class="card-txt">
+                    <span>{{item.name}}</span> <mat-icon>label_important</mat-icon>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div *ngIf="categories === 'error'">
+        <h3>No Data Available.</h3>
+    </div>    
+</div>

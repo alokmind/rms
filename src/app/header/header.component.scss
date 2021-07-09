@@ -1,0 +1,22 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+
+.menu-btn{
+    mat-icon{
+        transform: translateY(-2px);
+    }
+}
+
+.custom-select{
+    padding-right: 16px ;
+
+    mat-icon{
+        margin-right: 0;
+    }
+}
+
+.custom-select::after{
+    border-style: none;
+}

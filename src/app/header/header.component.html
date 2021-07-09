@@ -1,0 +1,22 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <button mat-mini-fab class="mr-10" color="accent" aria-label="Example icon-button with menu icon"
+        [routerLink]="['/']">
+        <mat-icon color="primary">home</mat-icon>
+    </button>
+    <span>Rental Management System</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="locations" color="accent" class="menu-btn">Select Location <mat-icon>
+            arrow_drop_down</mat-icon></button>
+    <mat-menu #locations="matMenu">
+        <ng-container *ngFor="let menu of menus; let pi = index">
+            <button mat-menu-item [matMenuTriggerFor]="sub_menu" class="custom-select">
+                <mat-icon>arrow_left</mat-icon>{{menu.location}}
+            </button>
+            <mat-menu #sub_menu="matMenu">
+                <button *ngFor="let subItem of menus[pi].branches; let i = index" mat-menu-item
+                    (click)="selectLocation(pi, i)">{{ subItem }}</button>
+            </mat-menu>
+        </ng-container>
+    </mat-menu>
+</mat-toolbar>
